@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Example Run
  *
- * sbt> run -f 1 -i 3 -wi 3 -t 1 Megamorphic
+ * lucmac:benchmarks luc$ sbt clean 'run -f 1 -i 3 -wi 3 -t 1 Megamorphic'
  *
  * [info] Benchmark                    Mode  Samples    Score  Score error  Units
  * [info] m.Megamorphic.monoMorphic    avgt        3   18.619        5.639  us/op
