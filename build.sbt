@@ -1,16 +1,13 @@
-import JmhKeys._
-
 name := "Java Benchmarks"
 
 version := "1.0-SNAPSHOT"
 
-jmhSettings
-
-outputTarget in Jmh := target.value / s"scala-${scalaBinaryVersion.value}"
+enablePlugins(JmhPlugin)
 
 resolvers += Resolver.mavenLocal
 
-scalaVersion := "2.11.6-newopt"
+// use 2.12.0-M2 as soon as it's out
+scalaVersion := "2.12.0-newopt"
 
 libraryDependencies ++= Seq(
   // Add your own project dependencies in the form:
