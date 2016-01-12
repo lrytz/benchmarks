@@ -7,7 +7,7 @@ enablePlugins(JmhPlugin)
 resolvers += Resolver.mavenLocal
 
 // use 2.12.0-M2 as soon as it's out
-scalaVersion := "2.12.0-newopt"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   // Add your own project dependencies in the form:
