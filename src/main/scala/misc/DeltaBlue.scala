@@ -44,23 +44,23 @@ import org.openjdk.jmh.annotations._
 /**
  * My machine
  * ----------
- * sbt clean 'set scalaVersion := "2.11.7"' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'jmh:run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.047 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.045 ±  0.001  ms/op
  *
- * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.043 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.046 ±  0.002  ms/op
  *
- * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-optimise")' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-optimise")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.044 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.042 ±  0.001  ms/op
  *
- * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'jmh:run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.042 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.048 ±  0.001  ms/op
  *
- * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.041 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.043 ±  0.001  ms/op
  */

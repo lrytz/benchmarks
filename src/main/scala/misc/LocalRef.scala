@@ -7,7 +7,7 @@ import org.openjdk.jmh.infra.Blackhole
 import scala.runtime.IntRef
 
 /**
- * sbt clean 'run -f 1 -i 3 -wi 3 -t 1 LocalRef'
+ * sbt clean 'jmh:run -f 1 -i 3 -wi 3 -t 1 LocalRef'
  *
  *
  * Observation: it seems that the closure creation is hampering escape analysis. so we have to get rid of the closure.

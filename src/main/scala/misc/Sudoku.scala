@@ -10,19 +10,19 @@ import scala.language.implicitConversions
 /**
  * My machine
  * ----------
- * sbt clean 'set scalaVersion := "2.11.7"' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'jmh:run -f 1 -i 20 -wi 20 -t 1 Sudoku'
  * [info] Sudoku.run  avgt   20  1.098 ± 0.011  ms/op
  *
- * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 Sudoku'
  * [info] Sudoku.run  avgt   20  1.106 ± 0.013  ms/op
  *
- * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-optimise")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-optimise")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 Sudoku'
  * [info] Sudoku.run  avgt   20  1.098 ± 0.007  ms/op
  *
- * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'jmh:run -f 1 -i 20 -wi 20 -t 1 Sudoku'
  * [info] Sudoku.run  avgt   20  1.130 ± 0.012  ms/op
  *
- * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'jmh:run -f 1 -i 20 -wi 20 -t 1 Sudoku'
  * [info] Sudoku.run  avgt   20  1.119 ± 0.013  ms/op
  *
  *

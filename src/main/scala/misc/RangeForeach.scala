@@ -5,7 +5,7 @@ import org.openjdk.jmh.annotations._
 import org.openjdk.jmh.infra.Blackhole
 
 /**
- * sbt clean 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'run -f 1 -i 10 -wi 10 -t 1 RangeForeach'
+ * sbt clean 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'jmh:run -f 1 -i 10 -wi 10 -t 1 RangeForeach'
  *
  * With optimizer (-Yopt:l:classpath)
  *  [info] RangeForeach.rangeForeachMega             avgt   10  158.866 ± 12.186  us/op

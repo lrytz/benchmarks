@@ -6,7 +6,7 @@ import org.openjdk.jmh.annotations._
 import org.openjdk.jmh.infra.Blackhole
 
 /**
- * lucmac:benchmarks luc$ sbt clean 'run -f 1 -i 3 -wi 3 -t 1 ArraysSort'
+ * lucmac:benchmarks luc$ sbt clean 'jmh:run -f 1 -i 3 -wi 3 -t 1 ArraysSort'
  *
  *   [info] ArraysSort.singleType  avgt    3   82.159 ± 68.524  us/op
  *   [info] ArraysSort.twoTypes    avgt    3   83.040 ± 33.789  us/op
