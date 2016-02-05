@@ -8,9 +8,33 @@ import org.openjdk.jmh.annotations._
 import scala.language.implicitConversions
 
 /**
- * How to run:
+ * My machine
+ * ----------
+ * sbt clean 'set scalaVersion := "2.11.7"' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * [info] Sudoku.run  avgt   20  1.098 ± 0.011  ms/op
  *
- * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'run -f 1 -i 10 -wi 10 -t 1 Sudoku'
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-Ybackend:GenBCode")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * [info] Sudoku.run  avgt   20  1.106 ± 0.013  ms/op
+ *
+ * sbt clean 'set scalaVersion := "2.11.7"' 'set scalacOptions in ThisBuild ++= Seq("-optimise")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * [info] Sudoku.run  avgt   20  1.098 ± 0.007  ms/op
+ *
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * [info] Sudoku.run  avgt   20  1.130 ± 0.012  ms/op
+ *
+ * sbt clean 'set scalaVersion := "2.12.0-newopt"' 'set scalacOptions in ThisBuild ++= Seq("-Yopt:l:classpath")' 'run -f 1 -i 20 -wi 20 -t 1 Sudoku'
+ * [info] Sudoku.run  avgt   20  1.119 ± 0.013  ms/op
+ *
+ *
+ * Linux machine
+ * -------------
+ * [info] Sudoku.run  avgt   20  3.817 ± 0.113  ms/op
+ * [info] Sudoku.run  avgt   20  3.744 ± 0.105  ms/op
+ * [info] Sudoku.run  avgt   20  3.771 ± 0.111  ms/op
+ * [info] Sudoku.run  avgt   20  3.913 ± 0.113  ms/op
+ * [info] Sudoku.run  avgt   20  3.902 ± 0.088  ms/op
+ *
+ *
  */
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.MILLISECONDS)

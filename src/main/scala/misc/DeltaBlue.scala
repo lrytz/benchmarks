@@ -42,6 +42,8 @@ import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
 
 /**
+ * My machine
+ * ----------
  * sbt clean 'set scalaVersion := "2.11.7"' 'run -f 1 -i 20 -wi 20 -t 1 DeltaBlue'
  * [info] DeltaBlue.bench1  avgt   20  0.047 ±  0.001  ms/op
  * [info] DeltaBlue.bench2  avgt   20  0.045 ±  0.001  ms/op
