@@ -121,7 +121,27 @@ object Sudoku {
     val iter = units(s).iterator
     while (iter.hasNext) {
       val u = iter.next
-      val dplaces = for (s <- u; if (values(s).contains(d))) yield s
+
+      // Original Version
+//      val dplaces = for (s <- u; if (values(s).contains(d))) yield s
+
+      // Same as the above, inlined map
+//      val b = new collection.immutable.VectorBuilder[String]
+
+      // using withFilter is slower
+//      val filtered = u.withFilter(s => values(s) contains d)
+//      for (s <- filtered) b += s
+
+      // foreach with inlined condition is faster than withFilter.
+      // u.iterator is the same speed
+//      for (s <- u)  if (values(s).contains(d)) b += s
+
+//      val dplaces = b.result()
+
+      // Fastest version - building a vector is slower
+      val dplaces = collection.mutable.ArrayBuffer.empty[String]
+      for (s <- u) if (values(s) contains d) dplaces += s
+
       if (dplaces.isEmpty)
         return False // Contradiction: no place for d
       if (dplaces.size == 1) {
