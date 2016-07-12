@@ -8,20 +8,20 @@ import java.util.concurrent.TimeUnit;
  * Example is a simplified version of
  * http://stackoverflow.com/questions/30312096/java-default-methods-is-slower-than-the-same-code-but-in-an-abstract-class
  *
- * $ sbt 'jmh:run -f 1 -i 10 -wi 10 -t 1 NoCHAPreventsOptimization'
+ * $ sbt 'jmh:run -f 1 -i 10 -wi 10 -t 1 DefaultMethodPreventsOptimization'
  *
- * [info] Benchmark                           Mode  Cnt     Score   Error  Units
+ * [info] Benchmark                                   Mode  Cnt     Score   Error  Units
  *
- * [info] NoCHAPreventsOptimization.aDefault  avgt   10  1586.156 ± 0.626  ns/op
- * [info] NoCHAPreventsOptimization.bVirtual  avgt   10   544.026 ± 0.356  ns/op
- * [info] NoCHAPreventsOptimization.cForward  avgt   10   543.695 ± 0.296  ns/op
+ * [info] DefaultMethodPreventsOptimization.aDefault  avgt   10  1586.156 ± 0.626  ns/op
+ * [info] DefaultMethodPreventsOptimization.bVirtual  avgt   10   544.026 ± 0.356  ns/op
+ * [info] DefaultMethodPreventsOptimization.cForward  avgt   10   543.695 ± 0.296  ns/op
  *
  */
 
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-public class NoCHAPreventsOptimization {
+public class DefaultMethodPreventsOptimization {
     interface I {
         int getV();
         default int accessDefault() { return getV(); }

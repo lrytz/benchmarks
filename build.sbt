@@ -10,6 +10,5 @@ resolvers += Resolver.mavenLocal
 scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
-  // Add your own project dependencies in the form:
-  // "group" % "artifact" % "version"
+   "org.scala-lang" % "scala-compiler" % scalaVersion.value
 )
